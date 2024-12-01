@@ -1,0 +1,17 @@
+\title{Group}
+\date{2024-11-07}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  A \strong{group} is a tuple #{(G, \ast)} where #{G} is a set and #{\ast \colon G \times G \to G} is a law of composition satisfying the properties:
+  \ol{
+    \li{Associativity: #{(a \ast b) \ast c = a \ast (b \ast c) \; \forall a,b,c \in G}}
+    \li{Existence of identity: #{\exists e \in G \; s.t. \; a \ast e = e \ast a = a \; \forall a \in G}}
+    \li{Existence of inverse: #{\forall a \in G, \exists a^{-1} \in G \; s.t. \; a \ast a^{-1} = a^{-1} \ast a = e}}
+  }
+}
+
+\p{
+  \strong{Remark}. In an abuse of notation, we often use #{G} to refer to both the set #{G} and the tuple #{(G, \ast)} endowed with the group operation #{\ast}. The group operation implicitly associated with #{G} is usually clear from the context.
+}
