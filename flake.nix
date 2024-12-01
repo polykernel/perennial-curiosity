@@ -33,11 +33,18 @@
             config = { };
             overlays = [ ];
           };
+
+          website = pkgs.callPackage ./website.nix {
+            forester = inputs.forester.packages.${system}.default;
+          };
         in
         nixpkgs.lib.fix (_self: {
           packages = {
+            inherit website;
+            site-builder = inputs.forester.packages.${system}.default;
             devenv-up = _self.devShells.default.config.procfileScript;
             devenv-test = _self.devShells.default.config.test;
+            default = _self.packages.website;
           };
 
           devShells = {
