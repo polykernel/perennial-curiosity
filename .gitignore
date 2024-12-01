@@ -1,6 +1,9 @@
 # Forester build output
 output/
 
+# Nix build out links
+result*
+
 # Devenv
 .devenv*
 devenv.local.nix
