@@ -1,5 +1,6 @@
 \title{Perennial Curiosity}
 \author{polykernel}
-\p{
-  Welcome to the pennisula!
-}
+
+\p{The land where curiosity grow on trees!}
+
+\transclude{about}
