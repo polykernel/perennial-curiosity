@@ -1,5 +1,5 @@
-dev-build:
-  forester build --dev
-
 build:
   forester build
+
+clean:
+  rm -rf output
