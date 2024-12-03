@@ -1,5 +1,5 @@
 {
-  description = "Basic flake for forest tending";
+  description = "Basic flake for topiary";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -13,8 +13,14 @@
   };
 
   nixConfig = {
-    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
-    extra-substituters = "https://devenv.cachix.org";
+    extra-trusted-public-keys = [
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+      "perennial-curiosity:3NPFo27amY6UkSwdflZjpCiEE13ulY4gI5tB8MFlbiU="
+    ];
+    extra-substituters = [
+      "https://devenv.cachix.org"
+      "https://attic.polykernel.cc/perennial-curiosity"
+    ];
   };
 
   outputs =
