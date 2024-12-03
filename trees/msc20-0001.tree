@@ -4,7 +4,7 @@
 \taxon{definition}
 
 \p{
-  A \strong{group} is a tuple #{(G, \ast)} where #{G} is a set and #{\ast \colon G \times G \to G} is a law of composition satisfying the properties:
+  A \strong{group} is a tuple #{(G, \ast)} where #{G} is a set and #{\ast \colon G \times G \rightarrow G} is a law of composition satisfying the properties:
   \ol{
     \li{Associativity: #{(a \ast b) \ast c = a \ast (b \ast c) \; \forall a,b,c \in G}}
     \li{Existence of identity: #{\exists e \in G \; s.t. \; a \ast e = e \ast a = a \; \forall a \in G}}
@@ -13,5 +13,9 @@
 }
 
 \p{
-  \strong{Remark}. In an abuse of notation, we often use #{G} to refer to both the set #{G} and the tuple #{(G, \ast)} endowed with the group operation #{\ast}. The group operation implicitly associated with #{G} is usually clear from the context.
+  \strong{Remark}: In an abuse of notation, we often use #{G} to refer to both the set #{G} and the tuple #{(G, \ast)} endowed with the group operation #{\ast}. The group operation implicitly associated with #{G} is usually clear from the context.
+}
+
+\p{
+  \strong{Remark}: We usually write the group operation #{\ast} as multiplication #{\cdot}(in many cases, we simply write multiplication by juxtaposition) or addition #{+} if the group is additive.
 }

@@ -3,4 +3,8 @@
 
 \p{The land where curiosity grow on trees!}
 
+\put\transclude/numbered{false}
 \transclude{about}
+
+\put\transclude/expanded{false}
+\transclude{msc20-index}

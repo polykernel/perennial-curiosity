@@ -1,0 +1,55 @@
+\title{Alternate axioms for a group}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  A \strong{group} is a tuple #{(G, \ast)} where #{G} is a set and #{\ast \colon G \times G \to G} is a law of composition satisfying the properties:
+  \ol{
+    \li{Associativity: #{(a \ast b) \ast c = a \ast (b \ast c) \; \forall a,b,c \in G}}
+    \li{Existence of left identity: #{\exists e \in G \; s.t. \; e \ast g = g \; \forall g \in G}}
+    \li{Existence of left inverse: #{\forall g \in G, \exists h \in G \; s.t. \; h \ast g = e}}
+  }
+}
+
+\p{
+  The axioms for a group clearly implies the alternate axioms. As suggested by the name, the two axioms are in fact equivalent.
+}
+
+\p{
+  Let #{G} be a group. To see that the axioms given above implies the (usual) axioms for a group. It suffices to show that a left identity of #{G} is also a right identity, and a left inverse of an element in #{G} is also a right inverse of said element.
+}
+
+\p{
+  Let #{g \in G}, then
+  ##{
+    \begin{gather*}
+      \exists x \in G \; s.t. \; x \ast g = e \\
+      \exists y \in G \; s.t. \; y \ast x = e
+    \end{gather*}
+  }
+  Thus,
+  ##{
+    y \ast e = y \ast (x \ast g) = (y \ast x) \ast g = e \ast g = g
+  }
+  and
+  ##{
+    g \ast e = (y \ast e) \ast e = y \ast (e \ast e) = y \ast e = g
+  }
+  Therefore #{g \ast e = g}, so #{e} is also a right identity of #{G}.
+}
+
+\p{
+  Let #{g \in G}, then
+  ##{
+    \begin{gather*}
+      \exists x \in G \; s.t. \; x \ast g = e \\
+      \exists y \in G \; s.t. \; y \ast x = e
+    \end{gather*}
+  }
+  By the previous argument, we have established that #{g = y \ast e = y}. Thus,
+  ##{
+    e = y \ast x = g \ast x
+  }
+  Therefore #{g \ast x = e}, so #{x} is also a right inverse of #{g}.
+}

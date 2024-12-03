@@ -1,0 +1,26 @@
+\title{}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{proposition}
+
+\import{base-utils}
+
+\p{
+  Let #{\{H_i\}_{i \in I}} is a family of subgroups of #{G}, then #{H = \bigcap_{i \in I} H_i} is a subgroup of #{G}.
+}
+
+\proof{
+  \p{Let #{\{H_i\}_{i \in I}} is a family of subgroups of #{G}.}
+
+  \p{
+    Since #{H_i < G} for all #{i \in I}, then #{e \in H_i} for all #{i \in I}. Therefore #{e \in \bigcap_{i \in I} H_i = H}, so #{H \neq \varnothing}.
+  }
+
+  \p{
+    Let #{h_1, h_2 \in H}, then #{h_1, h_2 \in H_i} for all #{i \in I}. Since #{H_i} is a subgroup of #{G} for all #{i \in I}, then #{h_1h_2^{-1} \in H_i} for all #{i \in I}. Therefore #{h_1h_2^{-1} \in \bigcap_{i \in I} H_i = H}.
+  }
+
+  \p{
+    Therefore by the proposition on [equivalent condition to be a subgroup](msc20-0006), #{H < G}.
+  }
+}

@@ -1,0 +1,17 @@
+\title{Subgroup}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  Let #{G} be a group, a \strong{subgroup} of #{G} is a subset #{H \subseteq G} such that #{H} is a group with the group operation of #{G}. That is,
+  \ol{
+    \li{For all #{\forall h_1, h_2 \in H}, #{h_1h_2 \in H}}
+    \li{The identity #{e} of #{G} \em{must} be in ${H}, i.e. #{e_H = e_G}}
+    \li{For any #{h \in H}, the inverse of #{h} under the group operation of #{G} is in #{H}}
+  }
+}
+
+\p{
+  Notation: we write #{H < G} to denote that #{H} is a subgroup of #{G}. In some text, #{H \leq G} is also used and #{H < G} is reserved for proper subgroup.
+}

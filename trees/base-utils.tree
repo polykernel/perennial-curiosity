@@ -1,0 +1,45 @@
+\title{Base utilities}
+
+\import{latex-preamble}
+
+\p{Here are some basic utility macros for writing notes.}
+
+\xmlns:html{http://www.w3.org/1999/xhtml}
+
+\def\br{\<html:br>{}}
+\def\hr{\<html:hr>{}}
+\def\mark[body]{\<html:mark>{\body}}
+\def\table[body]{\<html:table>{\body}}
+\def\tr[body]{\<html:tr>{\body}}
+\def\td[body]{\<html:td>{\body}}
+\def\th[body]{\<html:th>{\body}}
+
+\def\section[tit][body]{
+  \scope{
+    \put\transclude/toc{false}
+    \subtree{
+      \tit
+      \body
+    }
+  }
+}
+
+\def\example[tit][body]{
+  \scope{
+    \subtree{
+      \p{\strong{\tit}}
+      \body
+    }
+  }
+}
+
+\def\proof[body]{
+  \scope{
+    \put\transclude/toc{false}
+    \subtree{
+      \taxon{proof}
+      \body
+      \<html:span>[style]{float: right}{#{\square}}
+    }
+  }
+}
