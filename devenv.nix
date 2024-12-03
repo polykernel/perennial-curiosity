@@ -12,11 +12,8 @@
     pkgs.texliveMedium
     pkgs.just
     pkgs.treefmt
+    pkgs.python3
   ];
-
-  processes = {
-    preview-server.exec = "${lib.getExe pkgs.python3} -m http.server -d output/";
-  };
 
   pre-commit.hooks.treefmt = {
     enable = true;
