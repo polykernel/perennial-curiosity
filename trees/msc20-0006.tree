@@ -1,0 +1,44 @@
+\title{Equivalent condition to be a subgroup}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{proposition}
+
+\import{base-utils}
+
+\p{
+  A subset #{H} of a group #{G} is a subgroup if and only if #{H} is nonempty and for all #{x, y \in H}, #{xy^{-1} \in H}.
+}
+
+\proof{
+  \p{Let #{G} be a group.}
+
+  \p{
+    #{\Rightarrow} \br
+
+    Assume that #{H} is a subgroup of #{G}, then #{H} is nonempty since #{e \in H}. \br
+
+    Let #{x, y \in H}, then #{y \in H^{-1}} and so #{xy^{-1} \in H}. \br
+  }
+
+  \p{
+    #{\Leftarrow} \br
+
+    Assume that #{H} is nonempty and for all #{x, y \in H}, #{xy^{-1} \in H}. \br
+
+    Since #{H \neq \varnothing}, then there exists a #{h \in H}. Let #{x = y = h}, then #{xy^{-1} = hh^{-1} = e \in H}. \br
+
+    For any #{h \in H}, pick #{x = e}, #{y = h}, then
+    ##{
+      xy^{-1} = eh^{-1} = h^{-1} \in H
+    }
+
+    From the previous tep, we know that given any #{h_1, h_2 \in H}, #{h_2^{-1} \in H}. \br
+
+    Pick #{x = h_1, y = h_2^{-1}}, then
+    ##{
+      xy^{-1} = h_1(h_2^{-1})^{-1} = h_1h_2 \in H
+    }
+
+    Therefore by definition, #{H < G}.
+  }
+}
