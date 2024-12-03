@@ -1,0 +1,8 @@
+\title{Cyclic group}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  A group #{G} is called \strong{cyclic} if there is an element #{g \in G} such that #{\langle g \rangle = G}.
+}

@@ -1,0 +1,72 @@
+\title{Basic properties of groups}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{proposition}
+
+\import{base-utils}
+
+\p{
+  Let #{G} be a group, then
+  \ol{
+    \li{#{e} is unique}
+    \li{#{g^{-1}} is unique}
+    \li{#{(g^{-1})^{-1} = g} for all #{g \in G}}
+    \li{#{(g_1g_2)^{-1} = g_2^{-1}g_1^{-1}} for all #{g_1, g_2 \in G}}
+    \li{If #{g_1g_2 = g_1g_3}, then #{g_2 = g_3}. Likewise, if #{g_2g_1 = g_3g_1}, then #{g_2 = g_3}}
+  }
+}
+
+\proof{
+  \p{
+    Let #{G} be a group.
+    \ol{
+      \li{
+        Let #{e, e'} be two identity elements of #{G}, then
+        ##{
+          e = ee' = e'
+        }
+        Therefore #{e} is unique and we may refer to it as \strong{the} identity element of #{G}.
+      }
+      \li{
+        Let #{g \in G}, and #{s, t} be inverses of #{g} in #{G}, then
+        ##{
+          s = se = s(gt) = (sg)t = et = t
+        }
+        There #{g^{-1} = s} is unique and we may refer to \strong{the} inverse of an element in #{G}.
+      }
+      \li{
+        Let #{g in G}. Since #{gg^{-1} = e}, this implies #{g} is the inverse of #{g^{-1}}, namely #{(g^{-1})^{-1} = g}. Therefore #{(g^{-1})^{-1} = g} for all #{g \in G}.
+      }
+      \li{
+        Let #{g_1, g_2 \in G}. Consider #{(g_1g_2)(g_2^{-1}g_1^{-1})} and #{(g_2^{-1}g_1^{-1})(g_1g_2)},
+        ##{
+          \begin{gather*}
+            (g_1g_2)(g_2^{-1}g_1^{-1}) = g_1(g_2g_2^{-1})g_1^{-1} = g_1eg_1^{-1} = g_1g_1^{-1} = e \\
+            (g_2^{-1}g_1^{-1})(g_1g_2) = g_2^{-1}(g_1^{-1}g_1)g_2 = g_2^{-1}eg_2 = g_2^{-1}g_2 = e
+          \end{gather*}
+        }
+        Since #{g_2^{-1}g_1^{-1}} satisfy the property of the inverse, by uniqueness of the inverse, #{(g_1g_2)^{-1} = g_2^{-1}g_1^{-1}}.
+      }
+      \li{
+        Let #{g_1, g_2, g_3 \in G}.
+        ##{
+          \begin{align*}
+            g_1g_2 = g_1g_3 &\implies g_1^{-1}(g_1g_2) = g_1^{-1}(g_1g_3) \\
+              &\implies (g_1^{-1}g_1)g_2 = (g_1^{-1}g_1)g_3 \\
+              &\implies eg_2 = eg_3 \\
+              &\implies g_2 = g_3
+          \end{align*}
+        }
+        Similarly,
+        ##{
+          \begin{align*}
+            g_2g_1 = g_3g_1 &\implies (g_2g_1)g_1^{-1} = (g_3g_1)g_1^{-1} \\
+              &\implies g_2(g_1g_1^{-1}) = g_3(g_1g_1^{-1}) \\
+              &\implies g_2e = g_3e \\
+              &\implies g_2 = g_3
+          \end{align*}
+        }
+      }
+    }
+  }
+}

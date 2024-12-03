@@ -1,0 +1,12 @@
+\title{Abelian group}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  A group #{G} is called \strong{commutative} (abelian) if #{g_1g_2 = g_2g_1} for all #{g_1, g_2 \in G}.
+}
+
+\p{
+  \strong{Remark}: For reasons that are unbeknownst to me, in group theory we almost always say a group is abelian rather commutative, but in commutative algebra we say a ring is commutative.
+}

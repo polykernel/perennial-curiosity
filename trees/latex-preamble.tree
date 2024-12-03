@@ -1,0 +1,35 @@
+\title{LaTeX preamble}
+
+\p{Here are some use #{\latex} macros.}
+
+\def\latex-preamble/base{
+  \startverb
+  % https://tex.stackexchange.com/a/43009
+  \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+  \DeclarePairedDelimiter\norm{\lVert}{\rVert}
+  \DeclarePairedDelimiter\ideal{\langle}{\rangle}
+  \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+  % https://tex.stackexchange.com/a/282700
+  \newcommand*\quot[2]{
+    \mathchoice
+      {% \displaystyle
+          {\displaystyle #1}/{_{\displaystyle #2}}
+      }
+      {% \textstyle
+          {\textstyle #1}/{_{\textstyle #2}}
+      }
+      {% \scriptstyle
+          {\scriptstyle #1}/{_{\scriptstyle #2}}
+      }
+      {% \scriptscriptstyle
+          {\scriptscriptstyle #1}/{_{\scriptscriptstyle #2}}
+      }
+  }
+
+  \DeclareMathOperator{\ord}{ord}
+  \DeclareMathOperator{\Orb}{Orb}
+  \DeclareMathOperator{\Stab}{Stab}
+
+  \stopverb
+}
