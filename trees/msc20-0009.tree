@@ -1,0 +1,8 @@
+\title{Order of a group}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  The \strong{order} of a group #{G} is the cardinality of the underlying set #{G}, denoted #{\abs{G}}.
+}

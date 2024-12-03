@@ -1,0 +1,8 @@
+\title{Order of an element in a group}
+\date{2024-12-03}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  Let #{G} be a group. The \strong{order of an element} #{g \in G} is the cardinality of the subgroup #{\langle g \rangle}, denoted #{\ord(g)}.
+}
