@@ -8,5 +8,5 @@
 }
 
 \p{
-  \strong{Remark}: For reasons that are unbeknownst to me, in group theory we almost always say a group is abelian rather commutative, but in commutative algebra we say a ring is commutative.
+  \strong{Remark}: For reasons that are unbeknownst to me, in group theory we almost always say a group is abelian while in commutative algebra we almost always say a ring is commutative.
 }
