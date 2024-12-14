@@ -7,9 +7,13 @@
 }:
 
 {
+  languages.texlive = {
+    enable = true;
+    base = pkgs.texliveMedium;
+  };
+
   packages = [
     inputs.forester.packages.${pkgs.stdenv.system}.default
-    pkgs.texliveMedium
     pkgs.just
     pkgs.treefmt
     pkgs.python3
