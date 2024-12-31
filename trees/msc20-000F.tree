@@ -1,0 +1,8 @@
+\title{Disjoint cycles in #{S_n}}
+\date{2024-12-30}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  Two cycles #{(i_1\ i_2\ \dots \ i_m), (j_1\ j_2\ \dots \ j_m)} in #{S_n} are \strong{disjoint} if #{\{i_1, i_2, \dots, i_m\}} and #{\{j_1, j_2, \dots, j_n\}} are disjoint, i.e. #{\{i_1, i_2, \dots, i_m\} \cap \{j_1, j_2, \dots, j_n\} = \varnothing}.
+}

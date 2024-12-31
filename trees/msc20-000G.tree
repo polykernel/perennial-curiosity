@@ -1,0 +1,8 @@
+\title{Transpositions in #{S_n}}
+\date{2024-12-30}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  A cycles of length #{2} in #{S_n} is called a \strong{transposition}.
+}

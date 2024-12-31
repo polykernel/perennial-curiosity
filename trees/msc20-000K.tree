@@ -1,0 +1,12 @@
+\title{Group isomorphisms}
+\date{2024-12-30}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  A group homomorphism #{\varphi \colon G \rightarrow H} is called a \strong{isomorphism} if #{\varphi} is a bijection.
+}
+
+\p{
+  \strong{Remark}: The universal definition of an isomorphism requires that there are homomorphisms going in opposite directions which composes to the identity with respect to the source and target. It turns out for algebraic structures such as rings, groups and vector spaces, a homomorphism being bijective automatically implies the inverse function is also a homomorphism.
+}

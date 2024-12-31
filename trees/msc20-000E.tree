@@ -1,0 +1,20 @@
+\title{Symmetric group}
+\date{2024-12-30}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  Let #{X} be a set, the \strong{symmetric group over #{X}} is the tuple #{(S_X, \circ)} where
+  ##{
+    S_X = \{\sigma \colon X \rightarrow X \; \vert \; \sigma \ \text{is a bijection}\}
+  }
+  and group operation #{\circ} being function composition.
+}
+
+\p{
+  \strong{Remark}: #{(S_X, \circ)} is also called the permutation group (since it permutes or rearranges the elements of #{X}).
+}
+
+\p{
+  \strong{Remark}: When #{X = \{1, \dots, n\}}, we write #{S_n} instead of #{S_X}. Conversely, for any finite set #{X}, we can label the elements by #{1, \dots, n} and treat #{S_X} as #{S_n}.
+}

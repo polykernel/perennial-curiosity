@@ -1,0 +1,16 @@
+\title{Group homomorphisms}
+\date{2024-12-30}
+\author{polykernel}
+\taxon{definition}
+
+\p{
+  A map #{\varphi \colon G \rightarrow H} is called a \strong{group homomorphism} if #{\varphi(g_1g_2) = \varphi(g_1)\varphi(g_2) \; \forall g_1, g_2 \in G}.
+}
+
+\p{
+  \strong{Remark}: The assertion that a map #{\varphi \colon G \rightarrow H} is a group homomorphism only makes sense when (and automatically imply) the source and target of #{\varphi}, #{G} and #{H} respectively, are groups.
+}
+
+\p{
+  \strong{Remark}: When it is clear we are working with groups, we often say homomorphism rather than group homomorphism as a shorthand.
+}
