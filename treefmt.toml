@@ -12,6 +12,6 @@ options = ["-i"]
 
 [formatter.typos]
 command = "typos"
-excludes = ["theme"]
-includes = ["*"]
-options = ["--write-changes"]
+excludes = []
+includes = ["."]
+options = []
