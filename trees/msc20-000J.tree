@@ -1,0 +1,28 @@
+\title{Composition of group homomorphisms}
+\date{2024-12-30}
+\author{polykernel}
+\taxon{proposition}
+
+\import{base-utils}
+
+\p{
+  Let #{\varphi \colon G \rightarrow H} and #{\psi \colon H \rightarrow K} be a group homomorphisms, then #{\psi \circ \varphi} is a group homomorphism.
+}
+
+\proof{
+  \p{Let #{\varphi \colon G \rightarrow H} and #{\psi \colon H \rightarrow K} be a group homomorphisms.}
+
+  \p{
+    Let #{g_1, g_2 \in G}, then
+    ##{
+      \begin{align*}
+        (\psi \circ \varphi)(g_1g_2) &= \psi(\varphi(g_1g_2)) \\
+          &= \psi(\varphi(g_1)\varphi(g_2)) \\
+          &= \psi(\varphi(g_1))\psi(\varphi(g_2)) \\
+          &= (\psi \circ \varphi)(g_1)(\psi \circ \varphi)(g_2)
+      \end{align*}
+    }
+  }
+
+  \p{Therefore by definition, #{\psi \circ \varphi} is a group homomorphism.}
+}

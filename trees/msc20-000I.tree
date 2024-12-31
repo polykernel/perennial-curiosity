@@ -1,0 +1,69 @@
+\title{Basic properties of group homomorphisms}
+\date{2024-12-30}
+\author{polykernel}
+\taxon{proposition}
+
+\import{base-utils}
+
+\p{
+  Let #{\varphi \colon G \rightarrow H} be a group homomorphism, then
+  \ol{
+    \li{#{\varphi(e_G) = e_H}}
+    \li{#{\varphi(g^{-1}) = \varphi(g)^{-1}}}
+    \li{#{\varphi(g^n) = \varphi(g)^n \; \forall n \in \mathbb{Z}}}
+  }
+}
+
+\proof{
+  \p{
+    Let #{\varphi \colon G \rightarrow H} be a group homomorphism.
+    \ol{
+      \li{
+        ##{
+          \begin{align*}
+            \varphi(e_G) &= \varphi(e_Ge_G) = \varphi(e_G)\varphi(e_G) \\
+              &\implies \varphi(e_G)\varphi(e_G)^{-1} = \varphi(e_G)\varphi(e_G)\varphi(e_G)^{-1} \\
+              &\implies \varphi(e_G) = e_H
+          \end{align*}
+        }
+      }
+      \li{
+        Let #{g \in G}. Consider #{\varphi(g^{-1})\varphi(g)} and #{\varphi(g)\varphi(g^{-1})},
+        ##{
+          \begin{gather*}
+            \varphi(g^{-1})\varphi(g) = \varphi(g^{-1}g) = \varphi(e_G) = e_H \\
+            \varphi(g)\varphi(g^{-1}) = \varphi(gg^{-1}) = \varphi(e_G) = e_H
+          \end{gather*}
+        }
+        Since #{\varphi(g^{-1})} satisfy the property of the inverse, by uniqueness of the inverse, #{\varphi(g^{-1}) = \varphi(g)^{-1}}.
+      }
+      \li{
+        Let #{g \in G} and #{n \in \mathbb{Z}}. \br
+
+        We will prove that #{\varphi(g^n) = \varphi(g)^n \; \forall n \in \mathbb{Z}_{\geq 0}}. \br
+
+        Base case. \br
+        #{n = 0}, by part #{1}
+        ##{
+          \varphi(g^0) = \varphi(e_G) = e_H = \varphi(e_G)^0
+        }
+
+        Inductive step. \br
+        Assume the proposition holds for #{n = k}, consider #{\varphi(g^{k+1})}
+        ##{
+          \varphi(g^{k+1}) = \varphi(g^kg) = \varphi(g^k)\varphi(g) = \varphi(g)^k\varphi(g) = \varphi(g)^{k+1}
+        }
+        Therefore the proposition holds for #{n = k+1}. \br
+
+        By the principle of mathematical induction, #{\varphi(g^n) = \varphi(g)^n \; \forall n \in \mathbb{Z}_{\geq 0}}. \br
+
+        If #{n < 0}, then #{-n > 0}. By part #{2}, we have
+        ##{
+          \varphi(g^n) = \varphi((g^{-1})^{-n}) = \varphi(g^{-1})^{-n} = (\varphi(g)^{-1})^{-n} = \varphi(g)^n
+        }
+
+        Therefore #{\varphi(g^n) = \varphi(g)^n \; \forall n \in \mathbb{Z}}.
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+\title{Subgroups of cyclic groups}
+\date{2024-12-30}
+\author{polykernel}
+\taxon{theorem}
+
+\import{base-utils}
+
+\p{
+  Let #{G} be a cyclic group, then every subgroup of #{G} is cyclic.
+}
+
+\proof{
+  \p{Let #{G = \langle g \rangle} be a a cyclic group and let #{H < G}.}
+
+  \p{Let #{H' = \{n \in \mathbb{Z} \; \vert \; g^n \in H\}}. We note that #{g^k \in H} if and only if #{k \in H'}.}
+
+  \p{
+    Let #{m, n \in H'}, then #{g^m, g^n \in H}. \br
+
+    Consider #{m-n \in \mathbb{Z}}. Since #{H} is a subgroup, #{H} is closed under the group operation and taking inverses, so #{g^{-n} \in H} and #{g^m g^{-n} = g^{m-n} \in H} \br
+
+    Therefore by the proposition on [equivalent condition to be a subgroup](msc20-0006), #{H' < \mathbb{Z}}.
+  }
+
+  \p{
+    Since #{H' < \mathbb{Z}}, by the theorem on [subgroups of #{\mathbb{Z}}](msc20-000C), #{H' = \langle a \rangle} for some #{a \in \mathbb{Z}}.
+  }
+
+  \p{
+    Therefore
+    ##{
+      H = \{g^k \; \vert \; k \in H'\} = \{g^{qa} \; \vert \; q \in \mathbb{Z}\} = \{(g^a)^q \; \vert \; q \in \mathbb{Z}\} = \langle g^a \rangle
+    }
+    Thus #{H} is cyclic.
+  }
+}
