@@ -19,6 +19,7 @@ stdenv.mkDerivation {
       ./forest.toml
       ./index.html
       ./CNAME
+      ./robots.txt
     ];
   };
 
