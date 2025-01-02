@@ -17,5 +17,5 @@
 }
 
 \p{
-  \strong{Remark}: We usually write the group operation #{\ast} as multiplication #{\cdot}(in many cases, we simply write multiplication by juxtaposition) or addition #{+} if the group is additive.
+  \strong{Remark}: We usually write the group operation #{\ast} as multiplication #{\cdot} (in many cases, we simply write multiplication by juxtaposition) or addition #{+} if the group is additive.
 }
