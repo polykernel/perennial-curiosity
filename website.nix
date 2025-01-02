@@ -1,36 +1,32 @@
 {
   lib,
   stdenv,
+  fetchzip,
   forester,
-  just,
-  glibcLocalesUtf8,
 }:
 
+let
+  forest-theme = fetchzip {
+    url = "https://git.sr.ht/~polykernel/forest-theme/refs/download/v0.1.0/forest-theme.tar.gz";
+    hash = "sha256-7d5lKerL0YPiGkTk39KMPwLngmyVpWv2hcHe7zJJ+H8=";
+    stripRoot = false;
+  };
+in
 stdenv.mkDerivation {
-  name = "website";
+  pname = "website";
+  version = "0.1.0";
 
   src = lib.fileset.toSource {
     root = ./.;
     fileset = lib.fileset.unions [
       ./assets
-      ./theme
       ./trees
       ./justfile
       ./forest.toml
-      ./index.html
-      ./CNAME
-      ./robots.txt
     ];
   };
 
-  phases = [
-    "unpackPhase"
-    "buildPhase"
-    "installPhase"
-  ];
-
   nativeBuildInputs = [
-    just
     forester
   ];
 
@@ -38,7 +34,8 @@ stdenv.mkDerivation {
     runHook preBuild
 
     # Build the site
-    just build
+    cp -r ${forest-theme} theme
+    forester build
 
     runHook postBuild
   '';

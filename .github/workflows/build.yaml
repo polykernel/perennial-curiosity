@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-        with:
-          submodules: true
 
       - name: Setup netrc
         shell: sh
@@ -37,7 +35,7 @@ jobs:
       - name: Build site
         shell: sh
         run: |
-          nix build '.?submodules=1#website' --accept-flake-config
+          nix build --accept-flake-config
           cp --recursive --dereference --no-preserve=mode,ownership result dist
 
       - name: Deploy to Cloudflare Pages
