@@ -20,11 +20,11 @@
     \ol{
       \li{
         ##{
-          \begin{align*}
+          \begin{aligned}[t]
             \varphi(e_G) &= \varphi(e_Ge_G) = \varphi(e_G)\varphi(e_G) \\
               &\implies \varphi(e_G)\varphi(e_G)^{-1} = \varphi(e_G)\varphi(e_G)\varphi(e_G)^{-1} \\
               &\implies \varphi(e_G) = e_H
-          \end{align*}
+          \end{aligned}
         }
       }
       \li{
