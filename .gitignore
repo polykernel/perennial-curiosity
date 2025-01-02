@@ -1,5 +1,6 @@
-# Forester build output
-output/
+# Forester
+/output/
+/theme/
 
 # Nix build out links
 result*
