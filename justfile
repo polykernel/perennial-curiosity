@@ -6,3 +6,6 @@ serve:
 
 clean:
   rm -rf output
+
+new-tree PREFIX:
+  forester new --dest=trees --prefix={{PREFIX}}
