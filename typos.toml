@@ -2,5 +2,6 @@
 extend-exclude = [
   "theme/",
   "typos.toml",
-  "devenv_root"
+  "devenv_root",
+  "flake.lock"
 ]

@@ -1,4 +1,8 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+# SPDX-FileCopyrightText: NONE
+# SPDX-License-Identifier: CC0-1.0
+
 name: Build and deploy site
 
 on:
