@@ -1,0 +1,39 @@
+version = 1
+
+[[annotations]]
+path = [
+  ".editorconfig",
+  ".envrc",
+  "devenv_root",
+  "treefmt.toml",
+  "typos.toml",
+  "forest.toml",
+  ".gitattributes",
+  ".gitignore",
+  "flake.lock",
+  "flake.nix",
+  "devenv.nix",
+  "justfile",
+  "README.md"
+]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = [
+  "trees/*"
+]
+SPDX-FileCopyrightText = "2024 polykernel"
+SPDX-License-Identifier = [
+  "CC-BY-NC-SA-4.0",
+  "MIT"
+]
+
+[[annotations]]
+path = [
+  "assets/index.html",
+  "assets/CNAME",
+  "assets/robots.txt"
+]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
