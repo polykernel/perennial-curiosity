@@ -22,27 +22,21 @@ on:
 jobs:
   build_and_deploy:
     name: Build and deploy
+    env:
+      cacheName: perennial-curiosity
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Setup netrc
-        shell: sh
-        run: |
-          mkdir ${{ runner.temp }}/nix
-          echo "machine attic.polykernel.cc password ${{ secrets.ATTIC_CACHE_JWT }}" > ${{ runner.temp }}/nix/netrc
-
       - name: Install Nix
         uses: cachix/install-nix-action@v30
+
+      - name: Setup cachix
+        uses: cachix/cachix-action@v15
         with:
-          extra_nix_config: |
-            trusted-public-keys = perennial-curiosity:3NPFo27amY6UkSwdflZjpCiEE13ulY4gI5tB8MFlbiU= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
-            substituters = https://attic.polykernel.cc/perennial-curiosity https://cache.nixos.org/
-            netrc-file = ${{ runner.temp }}/nix/netrc
+          name: ${{ env.cacheName }}
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
 
       - name: Build site
         shell: sh

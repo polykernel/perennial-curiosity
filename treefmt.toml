@@ -1,3 +1,9 @@
+[formatter.actionlint]
+command = "actionlint"
+excludes = []
+includes = [".github/workflows/*.yaml"]
+options = []
+
 [formatter.nix]
 command = "nixfmt"
 excludes = []
