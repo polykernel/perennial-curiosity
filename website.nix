@@ -16,7 +16,7 @@ let
   };
 in
 stdenv.mkDerivation {
-  pname = "website";
+  pname = "perennialcuriosity.cc";
   version = "0.1.0";
 
   src = lib.fileset.toSource {

@@ -25,6 +25,7 @@
         pkgs.nixfmt-rfc-style
         pkgs.typos
         pkgs.toml-sort
+        pkgs.actionlint
       ];
     };
     reuse.enable = true;
