@@ -4,21 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    devenv.url = "github:cachix/devenv";
-    devenv.inputs.nixpkgs.follows = "nixpkgs";
-
     forester.url = "sourcehut:~jonsterling/ocaml-forester";
 
-    flake-utils.url = "github:numtide/flake-utils";
-  };
+    pre-commit-hooks.url = "github:cachix/git-hooks.nix";
 
-  nixConfig = {
-    extra-trusted-public-keys = [
-      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-    ];
-    extra-substituters = [
-      "https://devenv.cachix.org"
-    ];
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
@@ -46,28 +36,37 @@
           packages = {
             inherit website;
             site-builder = inputs.forester.packages.${system}.default;
-            devenv-up = _self.devShells.default.config.procfileScript;
-            devenv-test = _self.devShells.default.config.test;
             default = _self.packages.website;
           };
 
-          devShells = {
-            default = inputs.devenv.lib.mkShell {
-              inherit inputs pkgs;
-              modules = [
-                (
-                  { lib, ... }:
-                  {
-                    devenv.root =
-                      let
-                        devenvRootFileContent = builtins.readFile ./devenv_root;
-                      in
-                      pkgs.lib.mkIf (devenvRootFileContent != "") devenvRootFileContent;
-                  }
-                )
+          checks = {
+            pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+              src = ./.;
+              hooks = {
+                treefmt.enable = true;
+                treefmt.settings = {
+                  formatters = [
+                    pkgs.nixfmt-rfc-style
+                    pkgs.typos
+                    pkgs.toml-sort
+                    pkgs.actionlint
+                  ];
+                };
+                reuse.enable = true;
+              };
+            };
+          };
 
-                ./devenv.nix
-              ];
+          devShells = {
+            default = pkgs.mkShell {
+              inherit (_self.checks.pre-commit-check) shellHook;
+
+              nativeBuildInputs = [
+                inputs.forester.packages.${pkgs.stdenv.system}.default
+                pkgs.just
+                pkgs.python3
+                pkgs.texliveMedium
+              ] ++ _self.checks.pre-commit-check.enabledPackages;
             };
           };
         });
