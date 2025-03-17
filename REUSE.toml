@@ -4,15 +4,12 @@ version = 1
 path = [
   ".editorconfig",
   ".envrc",
-  "devenv_root",
   "treefmt.toml",
   "typos.toml",
   "forest.toml",
-  ".gitattributes",
   ".gitignore",
   "flake.lock",
   "flake.nix",
-  "devenv.nix",
   "justfile",
   "README.md"
 ]
