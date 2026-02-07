@@ -1,75 +1,63 @@
 {
-  description = "Basic flake for topiary";
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixpkgs-unstable";
 
-    forester.url = "sourcehut:~jonsterling/ocaml-forester";
+    forester.url = "sourcehut:~jonsterling/ocaml-forester?ref=main";
 
-    pre-commit-hooks.url = "github:cachix/git-hooks.nix";
+    git-hooks-nix.url = "github:cachix/git-hooks.nix?ref=master";
+    git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-parts.url = "github:hercules-ci/flake-parts?ref=main";
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
-    let
-      supportedSystems = [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
+    { flake-parts, ... }@inputs:
 
-      perSystem =
-        system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            config = { };
-            overlays = [ ];
-          };
+    flake-parts.lib.mkFlake { inherit inputs; } (
+      top@{ config, ... }:
 
-          website = pkgs.callPackage ./website.nix {
-            forester = inputs.forester.packages.${system}.default;
-          };
-        in
-        nixpkgs.lib.fix (_self: {
-          packages = {
-            inherit website;
-            site-builder = inputs.forester.packages.${system}.default;
-            default = _self.packages.website;
-          };
+      {
+        imports = [
+          inputs.git-hooks-nix.flakeModule
+        ];
 
-          checks = {
-            pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
-              src = ./.;
-              hooks = {
-                treefmt.enable = true;
-                treefmt.settings = {
-                  formatters = [
-                    pkgs.nixfmt-rfc-style
-                    pkgs.typos
-                    pkgs.toml-sort
-                    pkgs.actionlint
-                  ];
-                };
-                reuse.enable = true;
+        systems = [ "x86_64-linux" ];
+
+        perSystem =
+          {
+            config,
+            pkgs,
+            system,
+            ...
+          }:
+          {
+            packages = {
+              website = pkgs.callPackage ./website.nix {
+                forester = config.packages.site-builder;
               };
+              site-builder = inputs.forester.packages.${system}.default;
             };
-          };
 
-          devShells = {
-            default = pkgs.mkShell {
-              inherit (_self.checks.pre-commit-check) shellHook;
+            devShells.default = pkgs.mkShell {
+              name = "devshell";
+              shellHook = config.pre-commit.installationScript;
+              buildInputs = config.pre-commit.settings.enabledPackages ++ [
+                config.pre-commit.settings.package
 
-              nativeBuildInputs = [
-                inputs.forester.packages.${pkgs.stdenv.system}.default
+                config.packages.site-builder
                 pkgs.just
                 pkgs.python3
                 pkgs.texliveMedium
-              ] ++ _self.checks.pre-commit-check.enabledPackages;
+              ];
+            };
+
+            pre-commit.settings.hooks = {
+              nixfmt.enable = true;
+              typos.enable = true;
+              actionlint.enable = true;
+              reuse.enable = true;
             };
           };
-        });
-    in
-    inputs.flake-utils.lib.eachSystem supportedSystems perSystem;
+      }
+    );
 }
