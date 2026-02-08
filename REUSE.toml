@@ -20,6 +20,6 @@ SPDX-FileCopyrightText = "2024 polykernel"
 SPDX-License-Identifier = ["CC-BY-NC-SA-4.0", "MIT"]
 
 [[annotations]]
-path = ["assets/index.html", "assets/CNAME", "assets/robots.txt"]
+path = ["files/CNAME", "files/robots.txt"]
 SPDX-FileCopyrightText = "NONE"
 SPDX-License-Identifier = "CC0-1.0"

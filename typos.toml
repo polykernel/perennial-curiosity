@@ -1,6 +1,7 @@
 [files]
 extend-exclude = [
+  "files/static/preamble.tex",
+  "flake.lock",
   "theme/",
-  "typos.toml",
-  "flake.lock"
+  "typos.toml"
 ]

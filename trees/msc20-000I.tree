@@ -1,7 +1,7 @@
 \title{Basic properties of group homomorphisms}
 \date{2024-12-30}
 \author{polykernel}
-\taxon{proposition}
+\taxon{Proposition}
 
 \import{base-utils}
 

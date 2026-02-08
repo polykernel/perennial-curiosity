@@ -1,5 +1,6 @@
-build:
-  forester build
+build *FLAGS:
+  forester build {{FLAGS}}
+  cp -r files/* output/
 
 serve:
   python3 -m http.server -b 127.0.0.1 -d output/

@@ -1,7 +1,7 @@
 \title{Group homomorphisms}
 \date{2024-12-30}
 \author{polykernel}
-\taxon{definition}
+\taxon{Definition}
 
 \p{
   A map #{\varphi \colon G \rightarrow H} is called a \strong{group homomorphism} if #{\varphi(g_1g_2) = \varphi(g_1)\varphi(g_2) \; \forall g_1, g_2 \in G}.

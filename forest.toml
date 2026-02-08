@@ -1,5 +1,5 @@
 [forest]
 trees = ["trees"]
 assets = ["assets"]
-theme = "theme"
-root = "index"
+url = "https://perennialcuriosity.cc/"
+home = "index"

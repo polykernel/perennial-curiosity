@@ -1,7 +1,7 @@
 \title{Subgroup}
 \date{2024-12-03}
 \author{polykernel}
-\taxon{definition}
+\taxon{Definition}
 
 \p{
   Let #{G} be a group, a \strong{subgroup} of #{G} is a subset #{H \subseteq G} such that #{H} is a group with the group operation of #{G}. That is,

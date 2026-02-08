@@ -1,7 +1,7 @@
 \title{Abelian group}
 \date{2024-12-03}
 \author{polykernel}
-\taxon{definition}
+\taxon{Definition}
 
 \p{
   A group #{G} is called \strong{commutative} (abelian) if #{g_1g_2 = g_2g_1} for all #{g_1, g_2 \in G}.

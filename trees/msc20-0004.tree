@@ -1,7 +1,7 @@
 \title{Alternate axioms for a group}
 \date{2024-12-03}
 \author{polykernel}
-\taxon{definition}
+\taxon{Definition}
 
 \p{
   A \strong{group} is a tuple #{(G, \ast)} where #{G} is a set and #{\ast \colon G \times G \to G} is a law of composition satisfying the properties:

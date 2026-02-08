@@ -1,7 +1,7 @@
 \title{Symmetric group}
 \date{2024-12-30}
 \author{polykernel}
-\taxon{definition}
+\taxon{Definition}
 
 \p{
   Let #{X} be a set, the \strong{symmetric group over #{X}} is the tuple #{(S_X, \circ)} where

@@ -1,7 +1,5 @@
 \title{Base utilities}
 
-\import{latex-preamble}
-
 \p{Here are some basic utility macros for writing notes.}
 
 \xmlns:html{http://www.w3.org/1999/xhtml}
@@ -37,7 +35,7 @@
   \scope{
     \put\transclude/toc{false}
     \subtree{
-      \taxon{proof}
+      \taxon{Proof}
       \body
       \<html:span>[style]{float: right}{#{\square}}
     }

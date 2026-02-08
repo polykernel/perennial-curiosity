@@ -30,6 +30,7 @@ jobs:
               - '.github/**'
               - 'trees/*'
               - 'assets/*'
+              - 'files/*'
               - 'flake.nix'
               - 'flake.lock'
               - 'forest.toml'
@@ -47,7 +48,7 @@ jobs:
       - name: Build site
         shell: sh
         run: |
-          nix build --accept-flake-config
+          nix build --accept-flake-config .#website
           cp --recursive --dereference --no-preserve=mode,ownership result dist
 
       - name: Deploy to Cloudflare Pages

@@ -95,11 +95,11 @@
         "opam-repository": "opam-repository"
       },
       "locked": {
-        "lastModified": 1769906354,
-        "narHash": "sha256-DXmQUXWVRmWokGF+r1iAs9GK1xyHEbmHuEWNtDOLoRA=",
+        "lastModified": 1770539626,
+        "narHash": "sha256-RMkVHOPsaDRy6+wddnHsoS9sLTMJzVK97o+9EzHuuTc=",
         "owner": "~jonsterling",
         "repo": "ocaml-forester",
-        "rev": "217905b60862e93ea0858741c18f7710ed5de93d",
+        "rev": "d6f33c845e7e3b2815bd4ed1d55d1f50f4ac5fae",
         "type": "sourcehut"
       },
       "original": {

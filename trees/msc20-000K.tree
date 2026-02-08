@@ -1,7 +1,7 @@
 \title{Group isomorphisms}
 \date{2024-12-30}
 \author{polykernel}
-\taxon{definition}
+\taxon{Definition}
 
 \p{
   A group homomorphism #{\varphi \colon G \rightarrow H} is called a \strong{isomorphism} if #{\varphi} is a bijection.
