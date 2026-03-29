@@ -11,6 +11,8 @@
 
     forester.url = "sourcehut:~jonsterling/ocaml-forester?ref=main";
 
+    forest-theme.url = "https://codeberg.org/polykernel/forest-theme/archive/main.tar.gz";
+
     git-hooks-nix.url = "github:cachix/git-hooks.nix?ref=master";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -36,14 +38,16 @@
             lib,
             pkgs,
             system,
+            inputs',
             ...
           }:
           {
             packages = {
               website = pkgs.callPackage ./website.nix {
                 forester = config.packages.site-builder;
+                forest-theme = inputs'.forest-theme.packages.forest-theme;
               };
-              site-builder = inputs.forester.packages.${system}.default;
+              site-builder = inputs'.forester.packages.default;
             };
 
             devShells.default = pkgs.mkShell {
