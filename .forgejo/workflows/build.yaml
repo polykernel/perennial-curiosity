@@ -57,7 +57,7 @@ jobs:
           command: pages deploy dist --project-name=perennial-curiosity
 
       - name: Upload pages artifact
-        uses: https://data.forgejo.org/actions/upload-artifact@v7
+        uses: https://data.forgejo.org/forgejo/upload-artifact@v4
         with:
           name: pages
           path: dist
