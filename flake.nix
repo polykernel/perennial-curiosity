@@ -33,6 +33,7 @@
         perSystem =
           {
             config,
+            lib,
             pkgs,
             system,
             ...
@@ -63,6 +64,20 @@
               typos.enable = true;
               actionlint.enable = true;
               reuse.enable = true;
+              forgejo-runner-validate = {
+                enable = true;
+                name = "forgejo-runner-validate";
+                description = "This hook validates Forgejo Actions action and workflow files.";
+                types = [ "yaml" ];
+                entry = "${lib.getExe pkgs.forgejo-runner} validate --directory .";
+                files = "(?:(?:^|/)action|^\.(?:forgejo|github|gitea)/workflows/[^/\n]+)\.ya?ml$";
+                stages = [
+                  "pre-commit"
+                  "pre-merge-commit"
+                  "pre-push"
+                  "manual"
+                ];
+              };
             };
           };
       }
