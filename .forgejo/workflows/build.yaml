@@ -14,7 +14,7 @@ on:
 jobs:
   build_and_deploy:
     name: Build and deploy
-    runs-on: codeberg-small
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout source
         uses: https://data.forgejo.org/actions/checkout@v6
