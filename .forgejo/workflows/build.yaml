@@ -10,6 +10,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.forgejo/**'
+      - 'trees/*'
+      - 'assets/*'
+      - 'files/*'
+      - 'flake.lock'
+      - 'forest.toml'
+      - 'website.nix'
 
 jobs:
   build_and_deploy:
@@ -18,21 +26,6 @@ jobs:
     steps:
       - name: Checkout source
         uses: https://data.forgejo.org/actions/checkout@v6
-
-      - name: Path filter
-        id: path-filter
-        uses: https://github.com/dorny/paths-filter@v4
-        with:
-          filters: |
-            deploy:
-              - '.forgejo/**'
-              - 'trees/*'
-              - 'assets/*'
-              - 'files/*'
-              - 'flake.nix'
-              - 'flake.lock'
-              - 'forest.toml'
-              - 'website.nix'
 
       - name: Install Nix
         uses: https://github.com/NixOS/nix-installer-action@main
@@ -49,7 +42,6 @@ jobs:
           cp --recursive --dereference --no-preserve=mode,ownership result dist
 
       - name: Deploy to Cloudflare Pages
-        if: steps.path-filter.outputs.deploy == 'true'
         uses: https://github.com/cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
